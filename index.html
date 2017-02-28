@@ -23,7 +23,7 @@
         </div>
 
         <div ng-controller="NasaController">
-            <div dir-paginate="item in content | filter: search | itemsPerPage: pageSize || 10" class="format-body-section">
+            <div dir-paginate="item in content | filter: search | itemsPerPage: pageSize || 10 | orderBy: 'title'" class="format-body-section">
                 <table id="table-format">
                     <tr>
                         <td class="table-cell">
