@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app="nasaApp">
+	<head>
+		
+        <title>NASA PHOTOS</title>
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+	</head>
+
+	<body ng-app="nasaApp">
+
+        <div>
+            <nav class="fixed-navigation-bar">
+                <div class="search-section">
+                    <input type="text" ng-model="search" placeholder="Search.." class="search-box">
+                </div>
+                <div class="filter-section">
+                    <label class="filter-text">Rows:</label>
+                    <input type="number" min="1" max="100" ng-model="pageSize" placeholder="10" class="filter-box">
+                </div>
+            </nav>  
+        </div>
+
+        <div ng-controller="NasaController">
+            <div dir-paginate="item in content | filter: search | itemsPerPage: pageSize || 10" class="format-body-section">
+                <table id="table-format">
+                    <tr>
+                        <td class="table-cell">
+                            <img src="https://farm{{item.farm}}.staticflickr.com/{{item.server}}/{{item.id}}_{{item.secret}}.jpg" class="image-format"
+                            onclick="enlarge(this.src)">
+                            <div align="center"><label>{{item.title}}</label></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div id="myModal" class="modal">
+        <span class="close" onclick="reframe()">&times;</span>
+            <img id="enlargedImage" class="enlarged-image-format">
+        </div>
+
+        <div align="center">
+            <dir-pagination-controls
+           		max-size="10"
+           		direction-links="true"
+           		boundary-links="true" >
+        	</dir-pagination-controls>
+        </div>
+
+        <script src="js/angular.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/dirPagination.js"></script>
+	</body>
+
+</html>

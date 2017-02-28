@@ -1,0 +1,43 @@
+.fixed-navigation-bar
+{
+  position: fixed;
+  z-index: 9999,
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #306ac9;
+}
+.search-section, .filter-section, .search-box, .filter-box, .filter-text
+{
+    position: relative;
+    display: inline-block;
+    top: 15%;
+    height: 70%;
+}
+.search-section
+{
+    width: 80%;
+}
+.filter-section
+{
+    width: 15%;
+    align-content: right;
+}
+.search-box
+{
+  padding: 10px;
+  left: 3%;
+  width: 97%;
+}
+.filter-box
+{
+  left: 60%; /* 50% + 10%. Hence it will start at 20%width of filter-text + 60%*/
+  width: 30%;
+}
+.filter-text
+{
+  left: 50%;
+  width: 20%;
+  color: white;
+}

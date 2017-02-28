@@ -1,0 +1,10 @@
+table#table-format
+{
+  table-layout:fixed;
+  margin: 0 auto;
+}
+.table-cell
+{
+  height: 400px;
+  width: 500px;
+}
